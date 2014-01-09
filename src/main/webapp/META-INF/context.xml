@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+ <Resource name ="jdbc/toysforboys" type="javax.sql.DataSource" driverClassName = "com.mysql.jdbc.Driver"
+    url ="jdbc:mysql://localhost:3306/toysforboys"
+    username = "root"
+    password = "vdab"
+    auth ="Container"
+    factory ="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+    validationInterval ="60000"
+    testOnBorrow ="true"
+    validationQuery ="select 1"/>
+</Context>

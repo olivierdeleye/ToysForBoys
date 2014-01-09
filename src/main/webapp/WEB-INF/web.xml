@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>ToysForBoys</display-name>
+  <welcome-file-list>
+    <welcome-file>unshippedorders.htm</welcome-file>
+  </welcome-file-list>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/WEB-INF/JSP/404.jsp</location>
+  </error-page>
+   <error-page>
+    <error-code>500</error-code>
+    <location>/WEB-INF/JSP/500.jsp</location> <!-- URL naar DAOExceptionServlet -->
+  </error-page>
+   <filter>
+    <filter-name>JPAFilter</filter-name>
+    <filter-class>be.vdab.filters.JPAFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>JPAFilter</filter-name>
+    <url-pattern>*.htm</url-pattern>
+  </filter-mapping>
+  <servlet>
+   <servlet-name>OrderDetailServlet</servlet-name>
+   <servlet-class>be.vdab.servlets.OrderDetailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+   <servlet-name>OrderDetailServlet</servlet-name>
+   <url-pattern>/orderdetail.htm</url-pattern>
+  </servlet-mapping>
+   <servlet>
+   <servlet-name>UnShippedOrdersServlet</servlet-name>
+   <servlet-class>be.vdab.servlets.UnShippedOrdersServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+   <servlet-name>UnShippedOrdersServlet</servlet-name>
+   <url-pattern>/unshippedorders.htm</url-pattern>
+  </servlet-mapping>
+</web-app>
